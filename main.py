@@ -1,14 +1,14 @@
 """
-LING HACKS V 
+LING HACKS V - June 24th to 25th
 
-Idea:
-Description:
+Idea: Translate images of Sign Language to text
+Description: Takes images of hands and returns. 
 
 Coders: Jason Xie, Subhash Srinivasa, Komal Tummala
 """
 
 from PyQt6.QtWidgets import QMainWindow, QApplication, QPushButton
-
+import tensorflow as ts
 import sys
 
 class MainWindow(QMainWindow):
