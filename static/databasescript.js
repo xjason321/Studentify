@@ -1,3 +1,6 @@
+const fs = require('fs');
+
+// Array to store user login details
 let users = [];
 
 function register(event) {
@@ -15,6 +18,9 @@ function register(event) {
   // Add the new user to the array
   users.push(newUser);
 
+  // Save the updated user array to the database.json file
+  saveUsers();
+
   // Clear the input fields
   newUsernameInput.value = '';
   newPasswordInput.value = '';
@@ -22,6 +28,17 @@ function register(event) {
   alert('Registration successful! Please log in with your new credentials.');
 }
 
+function saveUsers() {
+  // Convert the users array to JSON
+  const jsonData = JSON.stringify(users, null, 2);
+
+  // Write the JSON data to the database.json file
+  fs.writeFileSync('database.json', jsonData, 'utf8', err => {
+    if (err) {
+      console.error('Error writing to database.json:', err);
+    }
+  });
+}
 function login(event) {
   event.preventDefault();
 
