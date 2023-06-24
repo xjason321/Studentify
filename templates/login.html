@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='loginstyle.css') }}">
+        <script src="{{ url_for('static', filename='databasescript.js') }}" defer></script> 
+    </head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="saveCredentials()">#Json needed
+            <div>
+                <label>Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+                <label>Password:</label>
+                <input type="text" id="password" name="password" required>
+            <div>
+                <input type="submit" value="Login">
+            </div>
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </form>
+    </div>
+</body>
+</html>

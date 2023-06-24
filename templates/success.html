@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Study Group Match</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='index_script.js') }}" defer></script>
+</head>
+<body>
+    <h1>Student Study Group Match</h1>
+    <p>This program helps students find study partners or groups based on their interests, subjects, and the help they need.</p>
+    <p><i>Made by Jason Xie, Subhash Srinivasa, and Komal Tummala</i></p>
+    
+    <div class="LogInMessage">
+        <p>You are currently <b>logged in</b> as </p>
+        <!--Placeholder stuff-->
+        <h3>{{user}}</h3>
+        <p><i>Before you begin, let's set up your subjects of interest...</i></p>
+    </div>
+
+    <div class="Filters">
+        <h2>Just some basic info to connect you with others...</h2>
+        <ul>
+            <li><a href="#">Grade Level:</a>
+                <select name="grade">
+                    <option value="9">9th Grade - Freshman</option>
+                    <option value="10">10th Grade - Sophomore</option>
+                    <option value="11">11th Grade - Junior</option>
+                    <option value="12">12th Grade - Senior</option>
+                </select>
+            </li>
+
+            <br>
+
+            <div class="Subjects">
+                <li><a href="#">Subject #1 of Interest:</a> <input type="text" name="learning_subjects" placeholder="AP Chemistry"></li>
+                <li><a href="#">Proficiency / Grade:</a> <input type="text" name="proficiency" placeholder="86% / B"></li>
+
+                <br>
+
+                <li><a href="#">Subject #2 of Interest:</a> <input type="text" name="learning_subjects" placeholder="H Math Analysis"></li>
+                <li><a href="#">Proficiency / Grade:</a> <input type="text" name="proficiency" placeholder="94% / A"></li>
+
+                <br>
+
+                <li><a href="#">Subject #3 of Interest:</a> <input type="text" name="learning_subjects" placeholder="CP United States History"></li>
+                <li><a href="#">Proficiency / Grade:</a> <input type="text" name="proficiency" placeholder="85% / B"></li>
+            </div>
+
+            <button id="submitBtn" type="submit">Submit</button>
+        </ul>
+    </div>
+</body>
+</html>
+

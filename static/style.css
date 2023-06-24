@@ -1,0 +1,53 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #fdfdfd;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    color: #666;
+    text-align: center;
+}
+
+.LogInMessage {
+    padding: 30px;
+    text-align: center;
+}
+
+.LogInMessage h3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.Filters {
+    background-color: #c4f7ec;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.Filters h2 {
+    color: #333;
+}
+
+.Filters ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Filters li {
+    margin-bottom: 10px;
+}
+
+.Filters a {
+    color: #333;
+    text-decoration: none;
+}
