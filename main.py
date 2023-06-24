@@ -7,11 +7,9 @@ Description:
 Coders: Jason Xie, Subhash Srinivasa, Komal Tummala
 """
 
-
 from PyQt6.QtWidgets import QMainWindow, QApplication, QPushButton
 
 import sys
-
 
 class MainWindow(QMainWindow):
     def __init__(self):
