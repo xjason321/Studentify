@@ -8,6 +8,7 @@ class preprocesser():
         d = open('/data/data.json', 'r')
         data = json.load(d)
         for i, person in enumerate(data):
+            
             pass
 class matcher():   
     def __init__(self):
