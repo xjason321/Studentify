@@ -1,3 +1,13 @@
+"""
+LING HACKS V 
+
+Idea:
+Description:
+
+Coders: Jason Xie, Subhash Srinivasa, Komal Tummala
+"""
+
+
 from PyQt6.QtWidgets import QMainWindow, QApplication, QPushButton
 
 import sys
