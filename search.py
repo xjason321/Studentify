@@ -12,15 +12,16 @@ class matcher():
             dta_subjects = dta['users'][key]['subjects']
             dis = 0
             for i in range(len(dta_subjects)):
-                if dta_subjects[i] != self.subjects[i]:
-                    dis += 1
-            if dis != 0:
+                dis += (self.subjects[i]-dta_subjects[i])**2
+            if self.name != key:
                 dists[key] = dis
+            print(dists)
             min = 10000000
             closest = ''
         for user in dists:
             if dists[user] <= min:
                 min = dists[user]
+                print(min)
                 closest = user
         return user
                     
@@ -28,7 +29,7 @@ class matcher():
 
 d = open('/Users/subhashsrinivasa/Desktop/GitHub/linghacks-jsk/data/database.json', 'r')
 data = json.load(d)    
-testuser = 'username3'
+testuser = 'username4'
 test = data['users'][testuser]
 p = matcher(testuser,test['subjects'], test['grade'], test['subjects proficiency'])
 print(p.sub_dist(data))
