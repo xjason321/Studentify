@@ -1,6 +1,3 @@
-print('hey')
-print("Hello World")
-print('ur mom')
+import random
 
-
-print("Hello")
+print(random.randint(1, 10))
