@@ -7,23 +7,12 @@ Description: Takes images of hands and returns.
 Coders: Jason Xie, Subhash Srinivasa, Komal Tummala
 """
 
-from PyQt6.QtWidgets import QMainWindow, QApplication, QPushButton
-import tensorflow as ts
-import sys
+from flask import Flask, render_template, request
+import tensorflow as tf
+import numpy as np
+import json
 
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
+app = Flask(__name__, static_folder='static')
 
-        self.setWindowTitle("LingHacks V Project")
-
-        button = QPushButton("My simple app.")
-        button.pressed.connect(self.close)
-
-        self.setCentralWidget(button)
-        self.show()
-
-app = QApplication(sys.argv)
-w = MainWindow()
-app.exec()
-
+if __name__ == '__main__':
+    app.run()
