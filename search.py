@@ -1,14 +1,14 @@
 import json
 import numpy as np
-class matcher():
+class User():
     def __init__(self, usrname, subs, grd, profs):
         self.name = usrname
         self.subjects = subs
         self.grade_level = grd
         self.proficiencies = profs
+        self.dists = {}
+        self. grp = {}
     def dist_finder(self, dta):
-        dists = {}
-        
         for key in dta:
             dta_grade = dta[key]['grade']
             dta_subjects = dta[key]['subjects']
@@ -19,8 +19,8 @@ class matcher():
                 dis_s += float(self.subjects[i]-dta_subjects[i])**2
                 dis_p += float(self.proficiencies[i]- dta_profs[i])**2
             if self.name != key:
-                dists[key] = [dis_g, dis_s, dis_p]
-        return dists
+                self.dists[key] = [dis_g, dis_s, dis_p]
+        return self.dists
                     
         
 
@@ -29,5 +29,5 @@ data = json.load(d)
 data_users = data['users']
 testuser = 'username1'
 test = data['users'][testuser]
-p = matcher(testuser,test['subjects'], test['grade'], test['subjects proficiency'])
-print(p.dist_finder(data_users))
+tst = User(testuser,test['subjects'], test['grade'], test['subjects proficiency'])
+print(tst.dist_finder(data_users))
