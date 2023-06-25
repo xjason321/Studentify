@@ -8,10 +8,9 @@ def create_database(username, password):
      except FileNotFoundError:
          # If the file doesn't exist, create an empty database
          database = {}
-         database['users'] = {}
+         database['users'] = []
 
-     database['users']['username'] = username
-     database['users']['password'] = password
+     database['users'].append({'username':username, 'passwword': password})
      sublist = []
      proflist = []
      for i in range(13):
@@ -20,6 +19,8 @@ def create_database(username, password):
              proflist.append(0)
          else:
              proflist.append(random.randint(0,5))
+     database['users'][-1]['subjects'] = sublist
+     database['users'][-1]['subjects proficiency'] = proflist
      with open('database.json', 'w') as f:
          json.dump(database, f)
 

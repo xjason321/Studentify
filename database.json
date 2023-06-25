@@ -1,1 +1,1 @@
-{"users": {"username": "n", "password": "j"}}
+{"users": [{"username": "hey", "passwword": "man", "subjects": [1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0], "subjects proficiency": [3, 4, 3, 2, 1, 0, 0, 3, 4, 5, 5, 0, 0]}, {"username": "ugh", "passwword": "bro", "subjects": [1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1], "subjects proficiency": [4, 0, 0, 1, 0, 0, 0, 4, 0, 1, 0, 0, 2]}]}
