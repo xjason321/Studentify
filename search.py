@@ -21,7 +21,9 @@ class User():
             if self.name != key:
                 self.dists[key] = [dis_g, dis_s, dis_p]
         return self.dists
-                    
+class System():
+    def __init__(self):
+        self.coeffs = [1,1,1]
         
 
 d = open('/Users/subhashsrinivasa/Desktop/GitHub/linghacks-jsk/data/database.json', 'r')
