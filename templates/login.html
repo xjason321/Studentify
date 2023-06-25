@@ -6,29 +6,37 @@
         <script src="{{ url_for('static', filename='databasescript.js') }}" defer></script> 
     </head>
 <body>
-    <div class="container">
-        <h2>Login</h2>
+    <div class="title">
+        <h1>~ Studentify ~</h1>
+    </div>
+    
+    <div class="headline">
+        <h3>Imagine a place for students...</h3>
+        <p>Where students can collaborate on problems together...</p>
+        <p>Where students can find others like them and unite...</p>
+        <h3><b>That place is Studentify.</b></h3>
+    </div>
+
+    <div class="main">
+        <p class="sign" align="center">Sign in</p>
 
         {% if success == "false" %} 
             <div class="ErrorMsg">
-                <h1>The entered username or password combo was invalid. Please try again.</h1>
-                <p>If you do not have an account yet, sign up!</p>
+                <p>Incorrect Username or Password. Please try again.</p>
             </div>
         {% endif %}
 
-        <form method="post" id="loginForm" onsubmit="saveCredentials()">
+        <form method="post" id="loginForm" class="form1" onsubmit="saveCredentials()">
             <div>
-                <label>Username:</label>
-                <input type="text" id="username" name="username" required>
+                <input class="un" type="text" placeholder="Username" id="username" name="username" align="center" required>
             </div>
             <div>
-                <label>Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input class="pass" type="password" placeholder="Password" id="password" name="password" align="center" required>
             </div>
             <div>
-                <input type="submit" value="Login">
+                <input class="submit" type="submit" value="Login" align="center">
             </div>
-            <p>Don't have an account? <a href="{{ url_for('signup') }}" target="_blank">Sign up!</a></p>
+            <p align="center">Don't have an account? <a href="{{ url_for('signup') }}">Sign up!</a></p>
         </form>
     </div>
 </body>

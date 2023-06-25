@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Sign Up</title>
-  <link rel="stylesheet" type="text/css" href="loginstyle.css">
-</head>
+    <head>
+        <title>Sign Up for Studentify</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signupstyle.css') }}">
+        <script src="{{ url_for('static', filename='databasescript.js') }}" defer></script> 
+    </head>
 <body>
-  <div>
-    <h2>Sign Up</h2>
-    <form method="post">
-      <div class="form-group">
-        <label for="new-username">Full Name:</label>
-        <input type="text" id="new-username" name="new-username" required>
-      </div>
-      <div class="form-group">
-        <label for="new-password">Password:</label>
-        <input type="password" id="new-password" name="new-password" required>
-      </div>
-        <button type="submit">Submit!</button>
-      </div>
-    </form>
-  </div>
-  <script src="script.js"></script>
+    <div class="title">
+        <h1>~ Studentify ~</h1>
+    </div>
+    
+    <div class="headline">
+        <h3>Imagine a place for students...</h3>
+        <p>Where students can collaborate on problems together...</p>
+        <p>Where students can find others like them and unite...</p>
+        <h3><b>That place is Studentify.</b></h3>
+    </div>
+
+    <div class="main">
+        <p class="sign" align="center">Sign Up</p>
+
+        {% if success == "false" %} 
+            <div class="ErrorMsg">
+                <p>Incorrect Username or Password. Please try again.</p>
+            </div>
+        {% endif %}
+
+        <form method="post" id="loginForm" class="form1" onsubmit="saveCredentials()">
+            <div>
+                <input class="un" type="text" placeholder="Username" id="new-username" name="new-username" align="center" required>
+            </div>
+            <div>
+                <input class="pass" type="password" placeholder="Password" id="new-password" name="new-password" align="center" required>
+            </div>
+            <div>
+                <input class="submit" type="submit" value="Sign Up!" align="center">
+            </div>
+            <p align="center">Already have an account? <a href="{{ url_for('login', success='~') }}">Log in!</a></p>
+        </form>
+    </div>
 </body>
 </html>

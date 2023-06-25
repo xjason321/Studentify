@@ -23,11 +23,11 @@ def write_json(newdata, filename='data.json'):
 @app.route('/')
 def default():
     # Redirect to the 'login' route
-    return redirect(url_for('login', success="None"))
+    return redirect(url_for('login', success="~"))
 
 # Login Page
 @app.route('/login/<success>', methods=['GET', 'POST'])
-def login(success=None):
+def login(success="~"):
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
@@ -51,10 +51,7 @@ def login(success=None):
 # Success Page
 @app.route('/user/profile/<username>', methods=['GET', 'POST'])
 def success(username):
-    if request.method == "POST":
-        print(request.form.get("eng3"))
-
-    return render_template('success.html', user=username)
+    return render_template('filters.html')
 
 # Signup Page
 @app.route('/signup', methods=['GET', 'POST'])
