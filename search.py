@@ -9,6 +9,7 @@ class User():
         self.dists = {}
         self. grp = {}
     def dist_finder(self, dta):
+        self.dists[self.name] = {}
         for user in dta:
             dta_grade = user['grade']
             dta_subjects = user['subjects']
@@ -18,14 +19,15 @@ class User():
             for i in range(len(dta_subjects)):
                 dis_s += float(self.subjects[i]-dta_subjects[i])**2
                 dis_p += float(self.proficiencies[i]- dta_profs[i])**2
+            
             if self.name != user['username']:
-                self.dists[user['username']] = [dis_g, dis_s, dis_p]
+                self.dists[self.name][user['username']]= [dis_g, dis_s, dis_p]
 class System():
     def __init__(self):
         self.coeffs = [1,1,1]
 
 
-d = open('test.json', 'r')
+d = open('database.json', 'r')
 data = json.load(d)    
 data_users = data['users']
 K = len(data_users)/5

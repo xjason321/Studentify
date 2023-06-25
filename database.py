@@ -10,7 +10,7 @@ def create_database(username, password):
          database = {}
          database['users'] = []
 
-     database['users'].append({'username':username, 'passwword': password})
+     database['users'].append({'username':username, 'password': password, 'grade': random.randint(9,12)})
      sublist = []
      proflist = []
      for i in range(13):
