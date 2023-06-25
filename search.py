@@ -20,7 +20,6 @@ class User():
                 dis_p += float(self.proficiencies[i]- dta_profs[i])**2
             if self.name != key:
                 self.dists[key] = [dis_g, dis_s, dis_p]
-        return self.dists
 class System():
     def __init__(self):
         self.coeffs = [1,1,1]
@@ -29,7 +28,10 @@ class System():
 d = open('/Users/subhashsrinivasa/Desktop/GitHub/linghacks-jsk/data/database.json', 'r')
 data = json.load(d)    
 data_users = data['users']
-testuser = 'username1'
-test = data['users'][testuser]
-tst = User(testuser,test['subjects'], test['grade'], test['subjects proficiency'])
-print(tst.dist_finder(data_users))
+K = len(data_users)/5
+users_dists = {}
+for key in data_users:
+    user = data_users[key]
+    usr_object = User(key,user['subjects'], user['grade'], user['subjects proficiency'])
+    usr_object.dist_finder(data_users)
+    print(usr_object.dists)
