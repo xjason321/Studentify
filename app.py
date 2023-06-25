@@ -31,13 +31,12 @@ def success(username):
     return render_template('success.html', user=username)
 
 # Signup Page
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    first_name = request.form['first_name']
-    last_name = request.form['last_name']
+    if request.method == "POST":
+        return redirect(url_for('user/profile/placeholder'))
+
     return render_template('signup.html')
-
-
 
 if __name__ == '__main__':
     app.run()

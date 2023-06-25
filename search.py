@@ -24,9 +24,8 @@ class System():
     def __init__(self):
         self.coeffs = [1,1,1]
 
-        
 
-d = open('/Users/subhashsrinivasa/Desktop/GitHub/linghacks-jsk/test.json', 'r')
+d = open('test.json', 'r')
 data = json.load(d)    
 data_users = data['users']
 K = len(data_users)/5
