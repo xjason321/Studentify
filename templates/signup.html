@@ -22,22 +22,19 @@
       </div>
     </form>
   </div>
-  <!-- <script>
-    const input1 = document.getElementById('new-username');
-    const input2 = document.getElementById('new-password');
-    const saveButton = document.getElementById('signup');
+  <script>
+    var input1 = document.getElementById("new-username");
+    var input2 = document.getElementById("new-password");
+    var signup = document.getElementById("signup")
+    var jsonText = document.getElementById("jsontext")
     
-    saveButton.addEventListener('click', () => {
-      const data = {
-        input1: input1.value,
-        input2: input2.value
-      };
-    
-      // Save the data to a JSON file
-      const jsonFile = 'database.json';
-      const fs = require('fs');
-      fs.writeFileSync(jsonFile, JSON.stringify(data));
-    });
-    </script> -->
+    signup.addEventListener("click", function(){
+        var data = {
+            "username":input1.value,
+            "password":input2.value
+        }
+        jsonText.innerHTML = JSON.stringify(data)
+    })
+    </script>
 </body>
 </html>
