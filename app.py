@@ -11,6 +11,7 @@ import os
 # openai.api_key = os.environ["OPENAI_API_KEY"]
 
 from flask import Flask, render_template, request, redirect, url_for
+import database
 
 app = Flask(__name__, static_folder='static')
 
