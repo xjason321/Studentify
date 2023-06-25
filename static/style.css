@@ -51,3 +51,19 @@ p {
     color: #333;
     text-decoration: none;
 }
+.Filters input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.Filters button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Filters button:hover {
+    background-color: #555;
+}

@@ -14,7 +14,7 @@
         <p>You are currently <b>logged in</b> as </p>
         <!--Placeholder stuff-->
         <h3>{{user}}</h3>
-        <p><i>Before you begin, let's set up your subjects of interest...</i></p>
+        <p><i>Let's get you started.</i></p>
     </div>
 
     <div class="Filters">
@@ -22,18 +22,27 @@
         <ul>
             <li><a href="#">Grade Level:</a>
                 <select name="grade">
-                    <input type="checkbox" value="9">9th Grade - Freshman</input>
-                    <input type="checkbox" value="10">10th Grade - Sophomore</input>
-                    <input type="checkbox" value="11">11th Grade - Junior</input>
-                    <input type="checkbox" value="12">12th Grade - Senior</input>
+                    <option value="9">9th Grade - Freshman</option>
+                    <option  value="10">10th Grade - Sophomore</option>
+                    <option  value="11">11th Grade - Junior</option>
+                    <option  value="12">12th Grade - Senior</option>
                 </select>
             </li>
 
             <br>
 
             <div class="Subjects">
-                <li><a href="#">Subject #1 of Interest:</a>
-                        <input type="checkbox" value="sciFOS">Foundations of Science</input>
+                <li><a href="#">Subject/s that you know and need help with:</a>
+                    <div>
+                        <label>
+                        <input type="checkbox" value="sciFOS">Foundations of Science
+                        <select name="proficiency">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                        </label>
+                    </div>
                         <input type="checkbox" value="sciBio">CP Bio/</input>
                         <input type="checkbox" value="sciBioH">Honors Bio</input>
                         <input type="checkbox" value="sciBioAP">AP Bio</input>
@@ -60,7 +69,7 @@
                         <input type="checkbox" value="eng1H">English 1 Honors</input>
                         <input type="checkbox" value="eng2">English 2</input>                       
                         <input type="checkbox" value="eng2H">English 2 Honors</input>
-                        <input type="checkbox" value="eng3">Egnlish 3</input>
+                        <input type="checkbox" value="eng3">English 3</input>
                         <input type="checkbox" value="eng3H">English 3 Honors</input>                       
                         <input type="checkbox" value="engAPLang">AP English Lang</input>
                         <input type="checkbox" value="eng4">English 4</input>
@@ -120,205 +129,12 @@
                         <input type="checkbox" value="compPyth">Programming: Python</input>
                         <input type="checkbox" value="compOther">Programming: Other</input>
                         <input type="checkbox" value="health">Health</input>
-                    <input type="text" name="learning_subjects" placeholder="AP Chemistry"></li>
-                <li><a href="#">Proficiency / Grade:</a> <input type="text" name="proficiency" placeholder="86% / B"></li>
-
-                <br>
-
-                <li><a href="#">Subject #2 of Interest:</a>
-                    <input type="checkbox" value="sciFOS">Foundations of Science</input>
-                    <input type="checkbox" value="sciBio">CP Bio/</input>
-                    <input type="checkbox" value="sciBioH">Honors Bio</input>
-                    <input type="checkbox" value="sciBioAP">AP Bio</input>
-                    <input type="checkbox" value="sciChem">Chem CP/Chemistry</input>
-                    <input type="checkbox" value="sciChemH">Honors Chemistry</input>
-                    <input type="checkbox" value="sciChemAP">AP Chemistry</input>
-                    <input type="checkbox" value="sciES">Environmental Science</input>
-                    <input type="checkbox" value="sciESAP">AP Environmental Science</input>
-                    <input type="checkbox" value="sciAnat">Anatomy and Physiology</input>
-                    <input type="checkbox" value="sciPhy">CP Physics/Physics</input>
-                    <input type="checkbox" value="sciPhy1AP">AP Physics 1</input>
-                    <input type="checkbox" value="sciPhy2AP">AP Physics 2</input>
-                    <input type="checkbox" value="sciPhyAPother">AP Physics - Others</input>
-                    <input type="checkbox" value="mathAlg1">Algebra 1</input>          
-                    <input type="checkbox" value="mathAlg2">Algebra 2</input>
-                    <input type="checkbox" value="mathAlg2H">Algebra 2 Honors</input>
-                    <input type="checkbox" value="mathMA">Math Analysis/ Pre Calc</input>                        
-                    <input type="checkbox" value="mathMAH">Math Analysis/ Pre Calc Honors</input>
-                    <input type="checkbox" value="mathCalcAB">AP Calc AB</input>
-                    <input type="checkbox" value="mathCalcBC">AP Calc BC</input>                       
-                    <input type="checkbox" value="mathStats">Statistics CP</input>
-                    <input type="checkbox" value="mathStatsAP">AP Statistics</input>                  
-                    <input type="checkbox" value="eng1">English 1</input>
-                    <input type="checkbox" value="eng1H">English 1 Honors</input>
-                    <input type="checkbox" value="eng2">English 2</input>                       
-                    <input type="checkbox" value="eng2H">English 2 Honors</input>
-                    <input type="checkbox" value="eng3">Egnlish 3</input>
-                    <input type="checkbox" value="eng3H">English 3 Honors</input>                       
-                    <input type="checkbox" value="engAPLang">AP English Lang</input>
-                    <input type="checkbox" value="eng4">English 4</input>
-                    <input type="checkbox" value="eng4H">English 4 Honors</input>                       
-                    <input type="checkbox" value="eng4APLit">AP English Lit</input>
-                    <input type="checkbox" value="engCW">Creative Writing</input>
-                    <input type="checkbox" value="engSpeech">Speech</input>
-                    <input type="checkbox" value="engYearbook">Yearbook</input>
-                    <input type="checkbox" value="engOther">Other English Class</input>
-                    <input type="checkbox" value="langSpanish">Spanish [All Levels]</input>
-                    <input type="checkbox" value="langSpanishAP">AP Spanish</input>
-                    <input type="checkbox" value="langFrench">French [All Levels]</input>
-                    <input type="checkbox" value="langFrenchAP">AP French</input>
-                    <input type="checkbox" value="langASL">American Sign Language [All Levels]</input>                       
-                    <input type="checkbox" value="langASLAP">AP ASL</input>
-                    <input type="checkbox" value="langChinese">Chinese [All Levels]</input>
-                    <input type="checkbox" value="langChineseAP">AP Chinese</input>
-                    <input type="checkbox" value="csAPPrincip">AP Computer Science Principals</input>
-                    <input type="checkbox" value="csAPA">AP Computer Science A</input>
-                    <input type="checkbox" value="csGeneral">Computer Science [All Levels]</input>
-                    <input type="checkbox" value="econCP">Economics</input>
-                    <input type="checkbox" value="econAP">AP Economics</input>
-                    <input type="checkbox" value="psychCP">Psychology</input>
-                    <input type="checkbox" value="psychAP">Ap Psychology</input>
-                    <input type="checkbox" value="artAPCG">AP Computer Graphics</input>
-                    <input type="checkbox" value="animgeneral">Animation [All Levels]</input>
-                    <input type="checkbox" value="animAP">AP Animation</input>
-                    <input type="checkbox" value="animCG">Computer Graphics</input>
-                    <input type="checkbox" value="videoprod">Video Production</input>
-                    <input type="checkbox" value="artAPCeramics">AP Ceramics</input>
-                    <input type="checkbox" value="artAPDP">AP Drawing & Painting</input>
-                    <input type="checkbox" value="artgeneral">Art [All Levels]</input>
-                    <input type="checkbox" value="musAPMT">AP Music Theory</input>
-                    <input type="checkbox" value="art3dAP">AP 3D Design</input>
-                    <input type="checkbox" value="art3d">3d Design</input>
-                    <input type="checkbox" value="art2dAP">AP 2D Design</input>
-                    <input type="checkbox" value="art2d">2D Design</input>
-                    <input type="checkbox" value="geography">Geography</input>
-                    <input type="checkbox" value="histWorld">World History</input>
-                    <input type="checkbox" value="histAPWorld">AP World History</input>
-                    <input type="checkbox" value="histUSH">US History</input>
-                    <input type="checkbox" value="histHUSH">Honors US History</input>
-                    <input type="checkbox" value="histAPUSH">AP US History</input>
-                    <input type="checkbox" value="histEuro">AP/CP Euro History</input>
-                    <input type="checkbox" value="histGeoPolitics">Geopolitics and the World Today</input>
-                    <input type="checkbox" value="govCP">CP Government</input>
-                    <input type="checkbox" value="govAP">AP Government</input>
-                    <input type="checkbox" value="elecDE">Digital Electronics</input>
-                    <input type="checkbox" value="elecMecha">ROP Mechatronics</input>
-                    <input type="checkbox" value="compProg">Computer Programming [General]</input>
-                    <input type="checkbox" value="compCyber">Cyber Security</input>
-                    <input type="checkbox" value="compIT">IT Essentials</input>
-                    <input type="checkbox" value="compJava">Programming: Java</input>
-                    <input type="checkbox" value="compC++">Programming: C++</input>
-                    <input type="checkbox" value="compC#">Programming: C#</input>
-                    <input type="checkbox" value="compJS">Programming: JS</input>
-                    <input type="checkbox" value="compPyth">Programming: Python</input>
-                    <input type="checkbox" value="compOther">Programming: Other</input>
-                    <input type="checkbox" value="health">Health</input>
-                </li>
-                <li><a href="#">Proficiency / Grade:</a> 
-                    <input type="checkbox" value="A">A</input>
-                    <input type="checkbox" value="B">B</input>
-                    <input type="checkbox" value="C">C</input>
-                    <input type="checkbox" value="D">D</input>
-                    <input type="checkbox" value="F">F</input>
-                </li>
-
-                <br>
-
-                <li><a href="#">Subject #3 of Interest:</a>
-                    <input type="checkbox" value="sciFOS">Foundations of Science</input>
-                    <input type="checkbox" value="sciBio">CP Bio/</input>
-                    <input type="checkbox" value="sciBioH">Honors Bio</input>
-                    <input type="checkbox" value="sciBioAP">AP Bio</input>
-                    <input type="checkbox" value="sciChem">Chem CP/Chemistry</input>
-                    <input type="checkbox" value="sciChemH">Honors Chemistry</input>
-                    <input type="checkbox" value="sciChemAP">AP Chemistry</input>
-                    <input type="checkbox" value="sciES">Environmental Science</input>
-                    <input type="checkbox" value="sciESAP">AP Environmental Science</input>
-                    <input type="checkbox" value="sciAnat">Anatomy and Physiology</input>
-                    <input type="checkbox" value="sciPhy">CP Physics/Physics</input>
-                    <input type="checkbox" value="sciPhy1AP">AP Physics 1</input>
-                    <input type="checkbox" value="sciPhy2AP">AP Physics 2</input>
-                    <input type="checkbox" value="sciPhyAPother">AP Physics - Others</input>
-                    <input type="checkbox" value="mathAlg1">Algebra 1</input>          
-                    <input type="checkbox" value="mathAlg2">Algebra 2</input>
-                    <input type="checkbox" value="mathAlg2H">Algebra 2 Honors</input>
-                    <input type="checkbox" value="mathMA">Math Analysis/ Pre Calc</input>                        
-                    <input type="checkbox" value="mathMAH">Math Analysis/ Pre Calc Honors</input>
-                    <input type="checkbox" value="mathCalcAB">AP Calc AB</input>
-                    <input type="checkbox" value="mathCalcBC">AP Calc BC</input>                       
-                    <input type="checkbox" value="mathStats">Statistics CP</input>
-                    <input type="checkbox" value="mathStatsAP">AP Statistics</input>                  
-                    <input type="checkbox" value="eng1">English 1</input>
-                    <input type="checkbox" value="eng1H">English 1 Honors</input>
-                    <input type="checkbox" value="eng2">English 2</input>                       
-                    <input type="checkbox" value="eng2H">English 2 Honors</input>
-                    <input type="checkbox" value="eng3">Egnlish 3</input>
-                    <input type="checkbox" value="eng3H">English 3 Honors</input>                       
-                    <input type="checkbox" value="engAPLang">AP English Lang</input>
-                    <input type="checkbox" value="eng4">English 4</input>
-                    <input type="checkbox" value="eng4H">English 4 Honors</input>                       
-                    <input type="checkbox" value="eng4APLit">AP English Lit</input>
-                    <input type="checkbox" value="engCW">Creative Writing</input>
-                    <input type="checkbox" value="engSpeech">Speech</input>
-                    <input type="checkbox" value="engYearbook">Yearbook</input>
-                    <input type="checkbox" value="engOther">Other English Class</input>
-                    <input type="checkbox" value="langSpanish">Spanish [All Levels]</input>
-                    <input type="checkbox" value="langSpanishAP">AP Spanish</input>
-                    <input type="checkbox" value="langFrench">French [All Levels]</input>
-                    <input type="checkbox" value="langFrenchAP">AP French</input>
-                    <input type="checkbox" value="langASL">American Sign Language [All Levels]</input>                       
-                    <input type="checkbox" value="langASLAP">AP ASL</input>
-                    <input type="checkbox" value="langChinese">Chinese [All Levels]</input>
-                    <input type="checkbox" value="langChineseAP">AP Chinese</input>
-                    <input type="checkbox" value="csAPPrincip">AP Computer Science Principals</input>
-                    <input type="checkbox" value="csAPA">AP Computer Science A</input>
-                    <input type="checkbox" value="csGeneral">Computer Science [All Levels]</input>
-                    <input type="checkbox" value="econCP">Economics</input>
-                    <input type="checkbox" value="econAP">AP Economics</input>
-                    <input type="checkbox" value="psychCP">Psychology</input>
-                    <input type="checkbox" value="psychAP">Ap Psychology</input>
-                    <input type="checkbox" value="artAPCG">AP Computer Graphics</input>
-                    <input type="checkbox" value="animgeneral">Animation [All Levels]</input>
-                    <input type="checkbox" value="animAP">AP Animation</input>
-                    <input type="checkbox" value="animCG">Computer Graphics</input>
-                    <input type="checkbox" value="videoprod">Video Production</input>
-                    <input type="checkbox" value="artAPCeramics">AP Ceramics</input>
-                    <input type="checkbox" value="artAPDP">AP Drawing & Painting</input>
-                    <input type="checkbox" value="artgeneral">Art [All Levels]</input>
-                    <input type="checkbox" value="musAPMT">AP Music Theory</input>
-                    <input type="checkbox" value="art3dAP">AP 3D Design</input>
-                    <input type="checkbox" value="art3d">3d Design</input>
-                    <input type="checkbox" value="art2dAP">AP 2D Design</input>
-                    <input type="checkbox" value="art2d">2D Design</input>
-                    <input type="checkbox" value="geography">Geography</input>
-                    <input type="checkbox" value="histWorld">World History</input>
-                    <input type="checkbox" value="histAPWorld">AP World History</input>
-                    <input type="checkbox" value="histUSH">US History</input>
-                    <input type="checkbox" value="histHUSH">Honors US History</input>
-                    <input type="checkbox" value="histAPUSH">AP US History</input>
-                    <input type="checkbox" value="histEuro">AP/CP Euro History</input>
-                    <input type="checkbox" value="histGeoPolitics">Geopolitics and the World Today</input>
-                    <input type="checkbox" value="govCP">CP Government</input>
-                    <input type="checkbox" value="govAP">AP Government</input>
-                    <input type="checkbox" value="elecDE">Digital Electronics</input>
-                    <input type="checkbox" value="elecMecha">ROP Mechatronics</input>
-                    <input type="checkbox" value="compProg">Computer Programming [General]</input>
-                    <input type="checkbox" value="compCyber">Cyber Security</input>
-                    <input type="checkbox" value="compIT">IT Essentials</input>
-                    <input type="checkbox" value="compJava">Programming: Java</input>
-                    <input type="checkbox" value="compC++">Programming: C++</input>
-                    <input type="checkbox" value="compC#">Programming: C#</input>
-                    <input type="checkbox" value="compJS">Programming: JS</input>
-                    <input type="checkbox" value="compPyth">Programming: Python</input>
-                    <input type="checkbox" value="compOther">Programming: Other</input>
-                    <input type="checkbox" value="health">Health</input>
-                </li>
-                <li><a href="#">Proficiency / Grade:</a> 
-                    <input type="checkbox" value="A">A</input>
-                    <input type="checkbox" value="B">B</input>
-                    <input type="checkbox" value="C">C</input>
-                    <input type="checkbox" value="D">D</input>
-                    <input type="checkbox" value="F">F</input>
+                <li><a href="#">What exactly do you need help with:</a>                     
+                    <input type="checkbox" value="A">Understanding/Clarifying a Concept</input>
+                    <input type="checkbox" value="B">Homework Help</input>
+                    <input type="checkbox" value="C">Exam Help/Prep</input>
+                    <input type="checkbox" value="D">Remedial Support</input>
+                    <input type="checkbox" value="F">Other [Please specify in the group chat]</input>
                 </li>
             </div>
             <button id="submitBtn" type="submit">Submit</button>

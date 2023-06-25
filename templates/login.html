@@ -8,13 +8,23 @@
 <body>
     <div class="container">
         <h2>Login</h2>
+
+        {% if success == "false" %} 
+            <div class="ErrorMsg">
+                <h1>The entered username or password combo was invalid. Please try again.</h1>
+                <p>If you do not have an account yet, sign up!</p>
+            </div>
+        {% endif %}
+
         <form method="post" id="loginForm" onsubmit="saveCredentials()">
             <div>
                 <label>Username:</label>
                 <input type="text" id="username" name="username" required>
             </div>
+            <div>
                 <label>Password:</label>
-                <input type="text" id="password" name="password" required>
+                <input type="password" id="password" name="password" required>
+            </div>
             <div>
                 <input type="submit" value="Login">
             </div>

@@ -1,11 +1,3 @@
-"""
-LING HACKS V - June 24th to 25th
-
-Idea: Translate images of Sign Language to text
-Description: Takes images of hands and returns. 
-
-Coders: Jason Xie, Subhash Srinivasa, Komal Tummala
-"""
 import os
 import database
 import json
@@ -31,28 +23,37 @@ def write_json(newdata, filename='data.json'):
 @app.route('/')
 def default():
     # Redirect to the 'login' route
-    return redirect(url_for('login'))
+    return redirect(url_for('login', success="None"))
 
 # Login Page
-@app.route('/login', methods=['GET', 'POST'])
-def login():
+@app.route('/login/<success>', methods=['GET', 'POST'])
+def login(success=None):
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
 
-        # TODO: Make a new json file for sensitive info
+        listOfUsers = []
+
+        # Generate list of user-pass combos in database
         with open('database.json') as f:
             compositedata = json.load(f)
-            listOfUsers = []
             for user in compositedata["users"]:
                 listOfUsers.append([user["username"], user["password"]])
-            print(listOfUsers)
 
-    return render_template('login.html')
+        # If entered combo in database
+        if [username, password] in listOfUsers:
+            return redirect(url_for('success', username=username))
+        else:
+            return redirect(url_for('login', success="false"))
+
+    return render_template('login.html', success=success)
 
 # Success Page
-@app.route('/user/profile/<username>')
+@app.route('/user/profile/<username>', methods=['GET', 'POST'])
 def success(username):
+    if request.method == "POST":
+        print(request.form.get("eng3"))
+
     return render_template('success.html', user=username)
 
 # Signup Page
