@@ -7,7 +7,7 @@
 <body>
   <div>
     <h2>Sign Up</h2>
-    <form>
+    <form action="/signup" method="post">
       <div class="form-group">
         <label for="new-username">Username:</label>
         <input type="text" id="new-username" name="new-username" required>
@@ -16,25 +16,11 @@
         <label for="new-password">Password:</label>
         <input type="password" id="new-password" name="new-password" required>
       </div>
-      <p id="jsontext"></p>
       <div class="form-group">
-        <input type="submit" id="signup" value="Sign Up">
+        <input type="submit" id="signup" name="submit">
       </div>
     </form>
   </div>
-  <script>
-    var input1 = document.getElementById("new-username");
-    var input2 = document.getElementById("new-password");
-    var signup = document.getElementById("signup")
-    var jsonText = document.getElementById("jsontext")
-    
-    signup.addEventListener("click", function(){
-        var data = {
-            "username":input1.value,
-            "password":input2.value
-        }
-        jsonText.innerHTML = JSON.stringify(data)
-    })
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>

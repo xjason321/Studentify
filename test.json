@@ -1,1 +1,74 @@
-{"users": [{"username": "8934", "password": "jsd"}, {"username": "Sub", "password": "pass"}]}
+{"users": [
+    {
+        "username": "sub", 
+        "password": "bla", 
+        "grade":10,
+        "subjects": [0,1,0,0,0,1,0,1,0,1,0,1,1],
+        "subjects proficiency": [0,5,0,0,0,0,0,4,0,3,0,5,2]
+    }, 
+    {
+        "username": "Cum", 
+        "password": "bal", 
+        "grade": 11,
+        "subjects": [0,1,0,0,0,0,0,1,0,1,0,1,1],
+        "subjects proficiency": [0,5,0,0,0,0,0,4,0,3,0,5,2]
+    },
+    {
+        "username": "jas", 
+        "password": "ang", 
+        "grade": 12,
+        "subjects": [0,1,1,1,0,0,0,1,0,1,1,1,1],
+        "subjects proficiency": [0,2,4,3,0,0,0,1,0,4,0,2,5]    
+        
+    },
+    {
+        "username": "jas", 
+        "password": "ang", 
+        "grade": 12,
+        "subjects": [0,1,1,1,0,0,0,1,0,1,1,1,1],
+        "subjects proficiency": [0,2,4,3,0,0,0,1,0,4,0,2,5]     
+    },
+    {
+        "username": "jas", 
+        "password": "ang", 
+        "grade": 12,
+        "subjects": [0,1,1,1,0,0,0,1,0,1,1,1,1],
+        "subjects proficiency": [0,2,4,3,0,0,0,1,0,4,0,2,5]    
+    },
+    {
+        "username": "jas", 
+        "password": "ang", 
+        "grade": 12,
+        "subjects": [0,1,1,1,0,0,0,1,0,1,1,1,1],
+        "subjects proficiency": [0,2,4,3,0,0,0,1,0,4,0,2,5]    
+    },
+    {
+        "username": "jas", 
+        "password": "ang", 
+        "grade": 12,
+        "subjects": [0,1,1,1,0,0,0,1,0,1,1,1,1],
+        "subjects proficiency": [0,2,4,3,0,0,0,1,0,4,0,2,5]    
+    },
+    {
+        "username": "jas", 
+        "password": "ang", 
+        "grade": 12,
+        "subjects": [0,1,1,1,0,0,0,1,0,1,1,1,1],
+        "subjects proficiency": [0,2,4,3,0,0,0,1,0,4,0,2,5]    
+    },
+    {"username": "jas", 
+    "password": "ang", 
+    "grade": 12,
+    "subjects": [0,1,1,1,0,0,0,1,0,1,1,1,1],
+    "subjects proficiency": [0,2,4,3,0,0,0,1,0,4,0,2,5]    
+    },
+    {
+        "username": "jas", 
+        "password": "ang", 
+        "grade": 12,
+        "subjects": [0,1,1,1,0,0,0,1,0,1,1,1,1],
+        "subjects proficiency": [0,2,4,3,0,0,0,1,0,4,0,2,5]    
+    }
+
+         ]
+ }

@@ -33,7 +33,11 @@ def success(username):
 # Signup Page
 @app.route('/signup')
 def signup():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
     return render_template('signup.html')
+
+
 
 if __name__ == '__main__':
     app.run()
