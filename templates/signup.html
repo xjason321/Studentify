@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Sign Up </title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signupstyle.css') }}">
-        <script src="{{ url_for('static', filename='databasescript.js') }}" defer></script>
-    </head>
-    <body>
-        
-    </body>
+<head>
+  <title>Sign Up</title>
+  <link rel="stylesheet" type="text/css" href="loginstyle.css">
+</head>
+<body>
+  <div>
+    <h2>Sign Up</h2>
+    <form>
+      <div class="form-group">
+        <label for="new-username">Username:</label>
+        <input type="text" id="new-username" name="new-username" required>
+      </div>
+      <div class="form-group">
+        <label for="new-password">Password:</label>
+        <input type="password" id="new-password" name="new-password" required>
+      </div>
+      <p id="jsontext"></p>
+      <div class="form-group">
+        <input type="submit" id="signup" value="Sign Up">
+      </div>
+    </form>
+  </div>
+  <!-- <script>
+    const input1 = document.getElementById('new-username');
+    const input2 = document.getElementById('new-password');
+    const saveButton = document.getElementById('signup');
+    
+    saveButton.addEventListener('click', () => {
+      const data = {
+        input1: input1.value,
+        input2: input2.value
+      };
+    
+      // Save the data to a JSON file
+      const jsonFile = 'database.json';
+      const fs = require('fs');
+      fs.writeFileSync(jsonFile, JSON.stringify(data));
+    });
+    </script> -->
+</body>
 </html>
