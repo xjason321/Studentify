@@ -6,17 +6,10 @@ Description: Takes images of hands and returns.
 
 Coders: Jason Xie, Subhash Srinivasa, Komal Tummala
 """
-<<<<<<< Updated upstream
 import os
-# import openai
-# openai.api_key = os.environ["OPENAI_API_KEY"]
-
-from flask import Flask, render_template, request, redirect, url_for
 import database
-=======
 import json
 from flask import Flask, render_template, request, redirect, url_for, session
->>>>>>> Stashed changes
 
 app = Flask(__name__, static_folder='static')
 
@@ -41,12 +34,24 @@ def default():
     return redirect(url_for('login'))
 
 # Login Page
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        # TODO: Make a new json file for sensitive info
+        with open('database.json') as f:
+            compositedata = json.load(f)
+            listOfUsers = []
+            for user in compositedata["users"]:
+                listOfUsers.append([user["username"], user["password"]])
+            print(listOfUsers)
+
     return render_template('login.html')
 
 # Success Page
-@app.route('/user/profile/<username>', methods=['GET'])
+@app.route('/user/profile/<username>')
 def success(username):
     return render_template('success.html', user=username)
 
@@ -57,12 +62,7 @@ def signup():
         username = request.form.get("new-username")
         password = request.form.get("new-password")
 
-        formatdata = {
-            'name': username,
-            'password': password,
-        }
-
-        write_json(formatdata, "database.json")
+        database.create_database(username, password)
 
         return redirect(url_for('success', username=username))
 

@@ -1,5 +1,6 @@
 import json
 import random
+
 def create_database(username, password):
      try:
          # Read the aexisting database file
