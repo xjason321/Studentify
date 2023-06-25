@@ -2,7 +2,7 @@
     "users":
     {
 
-        "username": 
+        "username1": 
         {
             "grade" : 10,
             "subjects" : [0,1,0,0,0,1,0,1,0,1,0,1,1],

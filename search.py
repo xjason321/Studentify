@@ -6,29 +6,28 @@ class matcher():
         self.subjects = subs
         self.grade_level = grd
         self.proficiencies = profs
-    def sub_dist(self, dta):
+    def dist_finder(self, dta):
         dists = {}
         
-        for key in dta['users']:
-            dta_subjects = dta['users'][key]['subjects']
-            dis = 0
+        for key in dta:
+            dta_grade = dta[key]['grade']
+            dta_subjects = dta[key]['subjects']
+            dta_profs = dta[key]['subjects proficiency']
+            dis_g, dis_s, dis_p = 0, 0, 0
+            dis_g += float(self.grade_level - dta_grade)**2
             for i in range(len(dta_subjects)):
-                dis += (self.subjects[i]-dta_subjects[i])**2
+                dis_s += float(self.subjects[i]-dta_subjects[i])**2
+                dis_p += float(self.proficiencies[i]- dta_profs[i])**2
             if self.name != key:
-                dists[key] = dis
-            # print(dists)
-            min = 10000000
-            closest = ''
-        for user in dists:
-            if dists[user] < min:
-                min = dists[user]
+                dists[key] = [dis_g, dis_s, dis_p]
         return dists
                     
         
 
 d = open('/Users/subhashsrinivasa/Desktop/GitHub/linghacks-jsk/data/database.json', 'r')
 data = json.load(d)    
-testuser = 'username3'
+data_users = data['users']
+testuser = 'username1'
 test = data['users'][testuser]
 p = matcher(testuser,test['subjects'], test['grade'], test['subjects proficiency'])
-print(p.sub_dist(data))
+print(p.dist_finder(data_users))
