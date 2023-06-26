@@ -6,140 +6,225 @@
     <script src="{{ url_for('static', filename='index_script.js') }}" defer></script>
 </head>
 <body>
-    <h1>Student Study Group Match</h1>
+    <h1 align="center">Student Study Group Match</h1>
     <p>This program helps students find study partners or groups based on their interests, subjects, and the help they need.</p>
     <p><i>Made by Jason Xie, Subhash Srinivasa, and Komal Tummala</i></p>
     
     <div class="LogInMessage">
         <p>You are currently <b>logged in</b> as </p>
-        <!--Placeholder stuff-->
-        <h3>{{user}}</h3>
+        <h3>{{username}}</h3>
+        <h6>make sure this is your discord username</h6>
         <p><i>Let's get you started.</i></p>
     </div>
 
     <div class="Filters">
         <h2>Just some basic info to connect you with others...</h2>
         <ul>
-            <li><a href="#">Grade Level:</a>
-                <select name="grade">
-                    <option value="9">9th Grade - Freshman</option>
-                    <option  value="10">10th Grade - Sophomore</option>
-                    <option  value="11">11th Grade - Junior</option>
-                    <option  value="12">12th Grade - Senior</option>
-                </select>
-            </li>
-
-            <br>
-
             <div class="Subjects">
-                <li><a href="#">Subject/s that you know and need help with:</a>
+                <form id="selectionForm" method="POST" action="/save-selections">
+                    <label for="gradeInput">What is your grade level? </label>
+                    <input type="number" id="gradeInput" name="gradeInput" placeholder="3">
                     <div>
-                        <label>
-                        <input type="checkbox" value="sciFOS">Foundations of Science
-                        <select name="proficiency">
-                            <option value="beginner">Beginner</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                        </select>
-                        </label>
+                        <div class="column" >
+                            <label for="subjectInput">Enter a subject of interest:</label>
+                            <div class="autofill">
+                                <input type="text" id="subjectInput" autocomplete="off" placeholder="AP Chemistry, CP World History, etc.">
+                                <div class="autofill-items" id="autofillItems"></div>
+                            </div>
+                        </div>
+
+                        <div class="column" >
+                            <label for="proficiencySelect">Proficiency: </label>
+                            <select id="proficiencySelect">
+                                <option value="1">1 - Beginner</option>
+                                <option value="2">2 - Intermediate</option>
+                                <option value="3">3 - Advanced</option>
+                            </select>
+                        </div>
                     </div>
-                        <input type="checkbox" value="sciBio">CP Bio/</input>
-                        <input type="checkbox" value="sciBioH">Honors Bio</input>
-                        <input type="checkbox" value="sciBioAP">AP Bio</input>
-                        <input type="checkbox" value="sciChem">Chem CP/Chemistry</input>
-                        <input type="checkbox" value="sciChemH">Honors Chemistry</input>
-                        <input type="checkbox" value="sciChemAP">AP Chemistry</input>
-                        <input type="checkbox" value="sciES">Environmental Science</input>
-                        <input type="checkbox" value="sciESAP">AP Environmental Science</input>
-                        <input type="checkbox" value="sciAnat">Anatomy and Physiology</input>
-                        <input type="checkbox" value="sciPhy">CP Physics/Physics</input>
-                        <input type="checkbox" value="sciPhy1AP">AP Physics 1</input>
-                        <input type="checkbox" value="sciPhy2AP">AP Physics 2</input>
-                        <input type="checkbox" value="sciPhyAPother">AP Physics - Others</input>
-                        <input type="checkbox" value="mathAlg1">Algebra 1</input>          
-                        <input type="checkbox" value="mathAlg2">Algebra 2</input>
-                        <input type="checkbox" value="mathAlg2H">Algebra 2 Honors</input>
-                        <input type="checkbox" value="mathMA">Math Analysis/ Pre Calc</input>                        
-                        <input type="checkbox" value="mathMAH">Math Analysis/ Pre Calc Honors</input>
-                        <input type="checkbox" value="mathCalcAB">AP Calc AB</input>
-                        <input type="checkbox" value="mathCalcBC">AP Calc BC</input>                       
-                        <input type="checkbox" value="mathStats">Statistics CP</input>
-                        <input type="checkbox" value="mathStatsAP">AP Statistics</input>                  
-                        <input type="checkbox" value="eng1">English 1</input>
-                        <input type="checkbox" value="eng1H">English 1 Honors</input>
-                        <input type="checkbox" value="eng2">English 2</input>                       
-                        <input type="checkbox" value="eng2H">English 2 Honors</input>
-                        <input type="checkbox" value="eng3">English 3</input>
-                        <input type="checkbox" value="eng3H">English 3 Honors</input>                       
-                        <input type="checkbox" value="engAPLang">AP English Lang</input>
-                        <input type="checkbox" value="eng4">English 4</input>
-                        <input type="checkbox" value="eng4H">English 4 Honors</input>                       
-                        <input type="checkbox" value="eng4APLit">AP English Lit</input>
-                        <input type="checkbox" value="engCW">Creative Writing</input>
-                        <input type="checkbox" value="engSpeech">Speech</input>
-                        <input type="checkbox" value="engYearbook">Yearbook</input>
-                        <input type="checkbox" value="engOther">Other English Class</input>
-                        <input type="checkbox" value="langSpanish">Spanish [All Levels]</input>
-                        <input type="checkbox" value="langSpanishAP">AP Spanish</input>
-                        <input type="checkbox" value="langFrench">French [All Levels]</input>
-                        <input type="checkbox" value="langFrenchAP">AP French</input>
-                        <input type="checkbox" value="langASL">American Sign Language [All Levels]</input>                       
-                        <input type="checkbox" value="langASLAP">AP ASL</input>
-                        <input type="checkbox" value="langChinese">Chinese [All Levels]</input>
-                        <input type="checkbox" value="langChineseAP">AP Chinese</input>
-                        <input type="checkbox" value="csAPPrincip">AP Computer Science Principals</input>
-                        <input type="checkbox" value="csAPA">AP Computer Science A</input>
-                        <input type="checkbox" value="csGeneral">Computer Science [All Levels]</input>
-                        <input type="checkbox" value="econCP">Economics</input>
-                        <input type="checkbox" value="econAP">AP Economics</input>
-                        <input type="checkbox" value="psychCP">Psychology</input>
-                        <input type="checkbox" value="psychAP">Ap Psychology</input>
-                        <input type="checkbox" value="artAPCG">AP Computer Graphics</input>
-                        <input type="checkbox" value="animgeneral">Animation [All Levels]</input>
-                        <input type="checkbox" value="animAP">AP Animation</input>
-                        <input type="checkbox" value="animCG">Computer Graphics</input>
-                        <input type="checkbox" value="videoprod">Video Production</input>
-                        <input type="checkbox" value="artAPCeramics">AP Ceramics</input>
-                        <input type="checkbox" value="artAPDP">AP Drawing & Painting</input>
-                        <input type="checkbox" value="artgeneral">Art [All Levels]</input>
-                        <input type="checkbox" value="musAPMT">AP Music Theory</input>
-                        <input type="checkbox" value="art3dAP">AP 3D Design</input>
-                        <input type="checkbox" value="art3d">3d Design</input>
-                        <input type="checkbox" value="art2dAP">AP 2D Design</input>
-                        <input type="checkbox" value="art2d">2D Design</input>
-                        <input type="checkbox" value="geography">Geography</input>
-                        <input type="checkbox" value="histWorld">World History</input>
-                        <input type="checkbox" value="histAPWorld">AP World History</input>
-                        <input type="checkbox" value="histUSH">US History</input>
-                        <input type="checkbox" value="histHUSH">Honors US History</input>
-                        <input type="checkbox" value="histAPUSH">AP US History</input>
-                        <input type="checkbox" value="histEuro">AP/CP Euro History</input>
-                        <input type="checkbox" value="histGeoPolitics">Geopolitics and the World Today</input>
-                        <input type="checkbox" value="govCP">CP Government</input>
-                        <input type="checkbox" value="govAP">AP Government</input>
-                        <input type="checkbox" value="elecDE">Digital Electronics</input>
-                        <input type="checkbox" value="elecMecha">ROP Mechatronics</input>
-                        <input type="checkbox" value="compProg">Computer Programming [General]</input>
-                        <input type="checkbox" value="compCyber">Cyber Security</input>
-                        <input type="checkbox" value="compIT">IT Essentials</input>
-                        <input type="checkbox" value="compJava">Programming: Java</input>
-                        <input type="checkbox" value="compC++">Programming: C++</input>
-                        <input type="checkbox" value="compC#">Programming: C#</input>
-                        <input type="checkbox" value="compJS">Programming: JS</input>
-                        <input type="checkbox" value="compPyth">Programming: Python</input>
-                        <input type="checkbox" value="compOther">Programming: Other</input>
-                        <input type="checkbox" value="health">Health</input>
-                <li><a href="#">What exactly do you need help with:</a>                     
-                    <input type="checkbox" value="A">Understanding/Clarifying a Concept</input>
-                    <input type="checkbox" value="B">Homework Help</input>
-                    <input type="checkbox" value="C">Exam Help/Prep</input>
-                    <input type="checkbox" value="D">Remedial Support</input>
-                    <input type="checkbox" value="F">Other [Please specify in the group chat]</input>
-                </li>
+                        
+                    <div>
+                        <button type="button" id="addButton">Add Subject to Selections</button>
+                        <h4>Your Selections:</h4>
+                        <ul id="selectionList"></ul>
+                    </div>
+
+                    <button type="submit" id="saveButton">Save Selections</button>
+                </form>
             </div>
-            <button id="submitBtn" type="submit">Submit</button>
+            <br>
         </ul>
     </div>
 </body>
+
+<script>
+    const subjects = [
+    "CP Biology",
+    "Honors Biology",
+    "AP Biology",
+    "CP Chemistry",
+    "Honors Chemistry",
+    "AP Chemistry",
+    "Environmental Science",
+    "AP Environmental Science (APES)",
+    "Anatomy and Physiology",
+    "CP Physics",
+    "AP Physics 1",
+    "AP Physics 2",
+    "AP Phyiscs C: E and M",
+    "Geometry",
+    "Algebra 1",
+    "Algebra 2",
+    "Algebra 2 Honors",
+    "Trigonometry",
+    "Math Analysis / Precalculus",
+    "Honors Math Analysis / Precalculus",
+    "AP Calculus AB",
+    "AP Calculus BC",
+    "CP Statistics",
+    "AP Statistics",
+    "English 1",
+    "CP English 2",
+    "Honors English 2",
+    "CP English 3",
+    "Honors English 3",
+    "CP English 4",
+    "AP English Language and Composition",
+    "AP English Literature",
+    "Creative Writing",
+    "Speech",
+    "Yearbook",
+    "Spanish [All Levels]",
+    "AP Spanish",
+    "French [All Levels]",
+    "AP French",
+    "American Sign Language (ASL) [All Levels]",
+    "AP ASL",
+    "Chinese [All Levels]",
+    "AP Chinese",
+    "AP Computer Science Principles",
+    "AP Computer Science A",
+    "Computer Science [General]",
+    "Economics",
+    "AP Economics",
+    "Psychology",
+    "AP Psychology",
+    "AP Computer Graphics",
+    "Computer Graphics",
+    "Animation [All Levels]",
+    "Video Production",
+    "AP Ceramics",
+    "AP Drawing and Painting",
+    "Art [All Levels]",
+    "AP Music Theory",
+    "AP 3D Design",
+    "3D Design",
+    "AP 2D Design",
+    "2D Design",
+    "Geography",
+    "World History",
+    "AP World History",
+    "US History",
+    "APUSH",
+    "AP/CP European History",
+    "Geopolitics and the World Today",
+    "CP Government",
+    "AP Government",
+    "Digital Electronics",
+    "ROP Mechatronics",
+    "Cyber Security",
+    "IT Essentials",
+    "Programming: C++",
+    "Programming: C#",
+    "Programming: Java",
+    "Programming: JS",
+    "Programming: Python",
+    "Programming: Other Language",
+    ];
+
+    const subjectInput = document.getElementById("subjectInput");
+    const autofillItems = document.getElementById("autofillItems");
+    const addButton = document.getElementById("addButton");
+    const selectionList = document.getElementById("selectionList");
+    const proficiencySelect = document.getElementById("proficiencySelect");
+    const saveButton = document.getElementById("saveButton");
+
+    let selections = []; // Array to store subject and proficiency selections
+
+    // Function to show autofill suggestions based on input value
+    function showAutofillItems(value) {
+      autofillItems.innerHTML = "";
+
+      const matchingSubjects = subjects.filter(subject => subject.toLowerCase().includes(value.toLowerCase()));
+
+      matchingSubjects.forEach(subject => {
+        const item = document.createElement("div");
+        item.classList.add("autofill-item");
+        item.textContent = subject;
+        item.addEventListener("click", () => {
+          subjectInput.value = subject;
+          autofillItems.innerHTML = "";
+        });
+
+        autofillItems.appendChild(item);
+      });
+
+      autofillItems.style.display = matchingSubjects.length > 0 ? "block" : "none";
+    }
+
+    // Event listener for subject input
+    subjectInput.addEventListener("click", () => {
+      showAutofillItems(subjectInput.value);
+    });
+
+    // Event listener for add button
+    addButton.addEventListener("click", () => {
+      const subject = subjectInput.value.trim();
+      const proficiency = proficiencySelect.value;
+
+      if (subject !== "") {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `
+          <span>${subject}</span>
+          <span class="proficiency-label">Proficiency: ${proficiency}</span>
+          <button class="removeButton">Remove</button>
+        `;
+        selectionList.appendChild(listItem);
+
+        // Store the subject and proficiency in selections array
+        selections.push({ subject, proficiency });
+
+        subjectInput.value = "";
+        autofillItems.innerHTML = "";
+      }
+    });
+
+    // Event listener for remove buttons
+    selectionList.addEventListener("click", (event) => {
+      if (event.target.classList.contains("removeButton")) {
+        const listItem = event.target.parentNode;
+        const subject = listItem.querySelector("span").textContent;
+
+        // Remove the subject from the selections array
+        selections = selections.filter(item => item.subject !== subject);
+
+        listItem.remove();
+      }
+    });
+
+    // Event listener for save button
+    saveButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default form submission
+
+        // Create a JSON object with the selections
+        const data = JSON.stringify(selections);
+
+        // Send an AJAX request to the server
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/save-selections");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(data);
+    });
+  </script>
 </html>
 

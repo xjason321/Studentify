@@ -1,13 +1,76 @@
 body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+ul {
+    margin-top: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+ul li span {
+    margin-right: 10px;
+}
+
+.autofill {
+    position: relative;
+}
+
+.autofill-items {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #f9f9f9;
+    border: 0px solid #ccc;
+    border-top: none;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.autofill-item {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.autofill-item:hover {
+    background-color: #e9e9e9;
+}
+
+.proficiency-label {
+    margin-left: 10px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding-bottom: 20px;
+}
+
+body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #fdfdfd;
     margin: 0;
     padding: 20px;
-}
-
-h1 {
-    text-align: center;
-    color: #333;
 }
 
 p {
@@ -54,7 +117,33 @@ p {
 .Filters input[type="checkbox"] {
     margin-right: 5px;
 }
+.removeButton {
+    margin-left: 10px;
+    background-color: #ff5252 !important;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
 
+#saveButton {
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #saveButton:hover {
+    background-color: #45a049;
+  }
+
+  
 .Filters button {
     padding: 10px 20px;
     background-color: #333;

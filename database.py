@@ -1,7 +1,7 @@
 import json
 import random
 
-def create_database(username, password):
+def create_database(username, password, grade, subjects, proficiencies):
      try:
          # Read the aexisting database file
          with open('database.json', 'r') as f:
@@ -11,25 +11,30 @@ def create_database(username, password):
          database = {}
          database['users'] = []
 
-     database['users'].append({'username':username, 'password': password, 'grade': random.randint(9,12)})
-     sublist = []
-     proflist = []
-     for i in range(13):
-         sublist.append(random.randint(0,1))
-         if sublist[i] == 0:
-             proflist.append(0)
-         else:
-             proflist.append(random.randint(0,5))
-     database['users'][-1]['subjects'] = sublist
-     database['users'][-1]['subjects proficiency'] = proflist
+     database['users'].append({'username':username, 'password': password, 'grade': grade, 'subjects': subjects, 'subjects proficiency': proficiencies})
+
      with open('database.json', 'w') as f:
-         json.dump(database, f)
+        json.dump(database, f)
 
 def main():
-    username = input('Enter username: ')
-    password = input('Enter password: ')
+    for i in range(101, 500):
+        username = "bot" + str(i)
+        password = "password" + str(i)
+        grade = random.randint(9, 12)
+        
+        listSubjects = []
+        listProficiencies = []
+        
+        for i in range(81):
+            isSelected = random.randint(0, 1)
+            if isSelected:
+                listSubjects.append(1)
+                listProficiencies.append(random.randint(1, 3))
+            else:
+                listSubjects.append(0)
+                listProficiencies.append(0)
 
-    create_database(username, password)
+        create_database(username, password, grade, listSubjects, listProficiencies)
 
 if __name__ == '__main__':
     main()

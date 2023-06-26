@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Group:</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='groups.css') }}">
+    <script src="{{ url_for('static', filename='index_script.js') }}" defer></script>
+</head>
+<body>
+    <h1 align="center"> Your Group Members</h1>
+    {% for member in group %}
+        <p>Group Member: {{member}}</p>
+    {% endfor %}
+    <h4 align="center"> Add each other on Discord and enjoy studying! </h4>
+</body>
+</html>
